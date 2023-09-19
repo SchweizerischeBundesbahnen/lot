@@ -15,8 +15,7 @@ to create a new branch you will just need to ensure that all big fixes are cherr
 
 ### Now, let's generate the changelog
 
-1. Create the changelog from the new branch `release-<MAJOR.MINOR>` (`git checkout release-<MAJOR.MINOR>`).
-   You will need to use the [kubebuilder-release-tools][kubebuilder-release-tools] to generate the notes. See [here][release-notes-generation]
+1. Update the changelog in the new branch `release-<MAJOR.MINOR>` (`git checkout release-<MAJOR.MINOR>`).
 
 > **Note**
 > - You will need to have checkout locally from the remote repository the previous branch

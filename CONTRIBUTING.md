@@ -17,8 +17,7 @@ These are mostly guidelines, not rules. Use your best judgment, and feel free to
 * [Coding Rules](#rules)
 * [Commit Message Guidelines](#commit)
 
-<a id="code-of-conduct"></a>
-## Code of Conduct
+## <a id="code-of-conduct"></a> Code of Conduct
 
 This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). 
 By participating, you are expected to uphold this code.
@@ -27,14 +26,14 @@ By participating, you are expected to uphold this code.
 
 Please ask the questions in the discussions page.
 
-* [Github Discussions, the official message board](https://github.com/SchweizerischeBundesbahnen/lot/discussions)
+* [GitHub Discussions, the official message board](https://github.com/SchweizerischeBundesbahnen/lot/discussions)
 
 ## <a id="how-can-i-contribute"></a> How Can I Contribute?
 
 ### <a id="issue"></a> Found an Issue?
 If you find a bug in the source code or a mistake in the documentation, you can help us by
 [submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/lot/issues/new). Including an issue
-reproduction (via StackBlitz, JsBin, Plunkr, etc.) is the absolute best way to help the team quickly
+reproduction (via StackBlitz, JsBin, etc.) is the absolute best way to help the team quickly
 diagnose the problem. Screenshots are also helpful.
 
 You can help the team even more and [submit a Pull Request](#submit-pr) with a fix.
@@ -64,7 +63,7 @@ chances of your issue being dealt with quickly:
   is a bug for you
 * **Browsers and Operating System** - is this a problem with all browsers?
 * **Reproduce the Error** - provide a live example (using StackBlitz or similar) or a unambiguous set of steps
-* **Screenshots** - myybe screenshots can help the team
+* **Screenshots** - maybe screenshots can help the team
   triage issues far more quickly than a text description.
 * **Related Issues** - has a similar issue been reported before?
 * **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
@@ -110,7 +109,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 * All features or bug fixes **must be tested** by one or more specs (unit-tests).
 * We follow [Semantic Versioning (semver)](https://semver.org)
 * All code PR must be labeled with :bug: (patch fixes), :sparkles: (backwards-compatible features), or :warning: (breaking changes)
-* Breaking changes will find their way into the next major release, other changes will go into an semi-immediate patch or minor release
+* Breaking changes will find their way into the next major release, other changes will go into a semi-immediate patch or minor release
 
 ## <a id="commit"></a> Commit Message Guidelines
 

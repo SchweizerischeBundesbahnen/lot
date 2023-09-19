@@ -10,9 +10,7 @@
 - [Coding Standards](#coding-standards)
 - [License](#license)
 
-<a id="introduction"></a>
-
-## Introduction
+## <a id="introduction"></a> Introduction
 
 LOT is collection of utilities for building Kubernetes Operator without the burden of excessive boilerplate.
 
@@ -26,9 +24,7 @@ Key Features
 - **Compatibility with Underlying Libraries**: LOT is built to be compatible with the underlying libraries used in Kubernetes operator development.
 - **Fast Prototyping**: LOT is designed to accelerate your development process, enabling fast prototyping of Kubernetes operators. Its intuitive API and reduced boilerplate allow you to quickly build and iterate on your operator logic, helping you bring your ideas to life in no time.
 
-<a id="getting-started"></a>
-
-## Getting Started
+## <a id="getting-started"></a> Getting Started
 To use LOT in your Go project, simply download the package:
 
 ```shell
@@ -41,39 +37,27 @@ and import it into your code:
 import "github.com/SchweizerischeBundesbahnen/lot"
 ```
 
-<a id="documentation"></a>
-
-## Documentation
+## <a id="documentation"></a> Documentation
 
 - [Examples](https://github.com/SchweizerischeBundesbahnen/lot/blob/main/examples)
 
 ### Scope
-Building Kubernetes Operators for cases where no API extension via CRDs are planed
+The current scope of LOT is for building Kubernetes Operators for cases where no API extension via CRDs are planed
 
-<a id="contributing"></a>
+> Further features are about to come 😉
 
-## Contributing
+## <a id="contributing"></a> Contributing
 
 Contributions are greatly appreciated. The maintainers actively manage the issues list, and try to highlight issues suitable for newcomers. The project follows the typical GitHub pull request model
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more details. Before starting any work, please either comment on an existing issue, or file a new one.
 
-<a id="code-of-conduct"></a>
 
-## Code of Conduct
+
+## <a id="code-of-conduct"></a> Code of Conduct
 
 To ensure that your project is a welcoming and inclusive environment for all contributors, you should establish a good [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 
-<a id="coding-standards"></a>
-
-## Coding Standards
-
-To maintain a high level of code quality and consistency across your project, you should establish coding standards that all contributors should follow.
-
-This repository includes a [CODING_STANDARDS.md](CODING_STANDARDS.md) file that outlines the coding standards that you should follow when contributing to the project.
-
-<a id="license"></a>
-
-# License
+## <a id="license"></a> License
 
 LOT is released under the [Apache License](LICEN
 SE.md). Feel free to use, modify, and distribute it as per the terms of the license.
