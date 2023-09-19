@@ -4,6 +4,8 @@ import (
 	"strings"
 
 	"github.com/SchweizerischeBundesbahnen/lot/pkg/selector"
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 )
 
 var _ = Describe("Selector", func() {
