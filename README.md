@@ -1,78 +1,67 @@
-# Open Source Repo Template
-
-> **Note:** This is a repository template. This README serves both as an example for your new repository, and also contains information on how to use the repository template.
-
-This repository is a template for creating new open-source repositories. It contains all the necessary files and documents to ensure that your open-source project is well-organized and follows best practices.
+# Lightweight Operator Toolbox (LOT)
 
 #### Table Of Contents
 
-- [Introduction](#Introduction)
-- [Getting Started](#Getting-Started)
-- [Contributing](#Contributing)
-- [Documentation](#Documentation)
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
 - [Code of Conduct](#code-of-conduct)
 - [Coding Standards](#coding-standards)
-- [License](#License)
+- [License](#license)
 
-<a id="Introduction"></a>
+<a id="introduction"></a>
 
 ## Introduction
 
-When creating an open-source project, it's important to establish a clear structure and set of guidelines to ensure that the project is maintainable and sustainable. This repository provides a basic template that can be used as a starting point for new projects.
+LOT is collection of utilities for building Kubernetes Operator without the burden of excessive boilerplate.
 
-The template includes the following features:
+LOT is a Go module designed to simplify Kubernetes operator development by abstracting common tasks, providing a simple API, and offering compatibility with underlying libraries.
 
-- A basic file structure for organizing code, documentation, and related files
-- A CONTRIBUTING.md file with guidelines for contributing to the project
-- A CODE_OF_CONDUCT.md file with guidelines for community behavior
-- A LICENSE.md file with information about the open-source license that applies to the project
+With LOT, you can rapidly prototype and build robust operators with minimal boilerplate code.
 
-<a id="Getting-Started"></a>
+Key Features
+- **Abstraction of Common Tasks**: LOT reduces boilerplate code by abstracting away common tasks involved in Kubernetes operator development. This allows you to focus on the core logic of your operator without getting lost in repetitive implementation details.
+- **Simple and Powerful API**: LOT provides a simple yet powerful API that encapsulates the most common use cases encountered in Kubernetes operator development. You can easily interact with Kubernetes resources, manage lifecycle events, handle reconciliations, and more, all with intuitive function calls.
+- **Compatibility with Underlying Libraries**: LOT is built to be compatible with the underlying libraries used in Kubernetes operator development.
+- **Fast Prototyping**: LOT is designed to accelerate your development process, enabling fast prototyping of Kubernetes operators. Its intuitive API and reduced boilerplate allow you to quickly build and iterate on your operator logic, helping you bring your ideas to life in no time.
 
-## Getting-Started
+<a id="getting-started"></a>
 
-Instructions for getting started with the repository, for e.g.:
+## Getting Started
+To use LOT in your Go project, simply download the package:
 
-- Installation instructions
-- Usage instructions
+```shell
+go get github/SchweizerischeBundesbahnen/lot@<VERSION>
+```
 
-> To use this template please follow the steps as below:
->
-> - If creating via Self Service Portal (WIP)
-> - If Creating via GitHub Interface
->   - Click the "Use this template" button above, select "Create a new repository"
->   - Give your repository a name, and optionally a description. The owner will always be "SchweizerischeBundesbahnen".
->   - Set the visibility of your repository to "Public".
->   - Do not select "Include all branches".
->   - Click the "Create repository from template" button and you're done!
+and import it into your code:
 
-<a id="Documentation"></a>
+```go
+import "github.com/SchweizerischeBundesbahnen/lot"
+```
+
+<a id="documentation"></a>
 
 ## Documentation
 
-Links to all relevant documentation files, including:
+- [Examples](https://github.com/SchweizerischeBundesbahnen/lot/blob/main/examples)
 
-- [CODING_STANDARDS.md](CODING_STANDARDS.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [LICENSE.md](LICENSE.md)
+### Scope
+Building Kubernetes Operators for cases where no API extension via CRDs are planed
 
-<a id="License"></a>
-
-## License
-
-> Choose a license that meets the organization's legal requirements and supports the sharing and modification of the code.
-> Please follow the internal Open Source guidelines while chosing the License.
-> This repository includes two [suggested license texts](./suggested_licenses) (Apache 2.0 and EPL 2.0). Rename the license you prefer to [LICENSE.md](LICENSE.md) and remove the other one.
-
-This project is licensed under [INSERT LICENSE].
-
-<a id="Contributing"></a>
+<a id="contributing"></a>
 
 ## Contributing
 
-Open-source projects thrive on collaboration and contributions from the community. To encourage others to contribute to your project, you should provide clear guidelines on how to get involved.
+Contributions are greatly appreciated. The maintainers actively manage the issues list, and try to highlight issues suitable for newcomers. The project follows the typical GitHub pull request model
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more details. Before starting any work, please either comment on an existing issue, or file a new one.
 
-This repository includes a [CONTRIBUTING.md](CONTRIBUTING.md) file that outlines how to contribute to the project, including how to submit bug reports, feature requests, and pull requests.
+<a id="code-of-conduct"></a>
+
+## Code of Conduct
+
+To ensure that your project is a welcoming and inclusive environment for all contributors, you should establish a good [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 
 <a id="coding-standards"></a>
 
@@ -82,8 +71,9 @@ To maintain a high level of code quality and consistency across your project, yo
 
 This repository includes a [CODING_STANDARDS.md](CODING_STANDARDS.md) file that outlines the coding standards that you should follow when contributing to the project.
 
-<a id="code-of-conduct"></a>
+<a id="license"></a>
 
-## Code of Conduct
+# License
 
-To ensure that your project is a welcoming and inclusive environment for all contributors, you should establish a good [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+LOT is released under the [Apache License](LICEN
+SE.md). Feel free to use, modify, and distribute it as per the terms of the license.
