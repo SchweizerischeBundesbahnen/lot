@@ -32,9 +32,7 @@ Please ask the questions in the discussions page.
 
 ### <a id="issue"></a> Found an Issue?
 If you find a bug in the source code or a mistake in the documentation, you can help us by
-[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/lot/issues/new). Including an issue
-reproduction (via StackBlitz, JsBin, etc.) is the absolute best way to help the team quickly
-diagnose the problem. Screenshots are also helpful.
+[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/lot/issues/new). 
 
 You can help the team even more and [submit a Pull Request](#submit-pr) with a fix.
 
