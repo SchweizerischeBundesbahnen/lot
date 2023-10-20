@@ -32,9 +32,7 @@ Please ask the questions in the discussions page.
 
 ### <a id="issue"></a> Found an Issue?
 If you find a bug in the source code or a mistake in the documentation, you can help us by
-[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/lot/issues/new). Including an issue
-reproduction (via StackBlitz, JsBin, etc.) is the absolute best way to help the team quickly
-diagnose the problem. Screenshots are also helpful.
+[submitting an issue](#submit-issue) to our [GitHub Repository](https://github.com/SchweizerischeBundesbahnen/lot/issues/new). 
 
 You can help the team even more and [submit a Pull Request](#submit-pr) with a fix.
 
@@ -61,10 +59,7 @@ chances of your issue being dealt with quickly:
 * **Toolchain and Environment Details** - which versions of libraries, toolchain, platform etc 
 * **Motivation for or Use Case** - explain what are you trying to do and why the current behavior
   is a bug for you
-* **Browsers and Operating System** - is this a problem with all browsers?
 * **Reproduce the Error** - provide a live example (using StackBlitz or similar) or a unambiguous set of steps
-* **Screenshots** - maybe screenshots can help the team
-  triage issues far more quickly than a text description.
 * **Related Issues** - has a similar issue been reported before?
 * **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
   causing the problem (line of code or commit)
@@ -83,7 +78,6 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 * Create your patch, **including appropriate test cases**.
 * Follow our [Coding Rules](#rules).
-* Test your changes with our supported browsers and screen readers.
 * Run tests and ensure that all tests pass.
 * Commit your changes using a descriptive commit message that follows our
   [commit message conventions](#commit). Adherence to these conventions
