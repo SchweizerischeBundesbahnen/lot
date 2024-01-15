@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"os"
+	"sigs.k8s.io/controller-runtime/pkg/cache"
+	"sigs.k8s.io/controller-runtime/pkg/metrics/server"
 
 	lot_client "github.com/SchweizerischeBundesbahnen/lot/pkg/lot-client"
 	"github.com/SchweizerischeBundesbahnen/lot/pkg/selector"
@@ -70,7 +72,10 @@ func main() {
 	}
 }
 
-var mgrOpts = manager.Options{Namespace: "noexists", MetricsBindAddress: ":9090"}
+var mgrOpts = manager.Options{
+	Cache:   cache.Options{DefaultNamespaces: map[string]cache.Config{"noexists": {}}},
+	Metrics: server.Options{BindAddress: ":9090"},
+}
 
 var customPredicates = predicate.Funcs{
 	UpdateFunc: func(event event.UpdateEvent) bool {
@@ -90,7 +95,7 @@ var _defaultPredicate = predicate.NewPredicateFuncs(func(object client.Object) b
 // TODO: It is possible to return reconcile.Result (or a generic type of it..)
 func createOrUpdateHandler(ctx context.Context, object client.Object, cl lot_client.Client, scheme *runtime.Scheme) error {
 	log := logf.FromContext(ctx).WithName("onCreateOrUpdate")
-	log.Info("reconciling object", "object", object.GetName(), "ns", object.GetNamespace())
+	log.Info("reconciling created/updated object", "object", object.GetName(), "ns", object.GetNamespace())
 	s := v1.Secret{}
 	if object.GetName() == "delete-test-secret" {
 		err := cl.Get(context.Background(), client.ObjectKey{Name: object.GetName(), Namespace: object.GetNamespace()}, &s)
@@ -103,7 +108,10 @@ func createOrUpdateHandler(ctx context.Context, object client.Object, cl lot_cli
 }
 func deleteHandler(ctx context.Context, object client.Object, cl lot_client.Client, scheme *runtime.Scheme) error {
 	log := logf.FromContext(ctx).WithName("onDelete")
-	log.Info("reconciling object", "object", object.GetName(), "ns", object.GetNamespace())
+	if object.GetDeletionTimestamp().IsZero() {
+		return nil
+	}
+	log.Info("reconciling deleted object", "object", object.GetName(), "ns", object.GetNamespace())
 	s := v1.Secret{}
 	err := cl.Get(context.Background(), client.ObjectKey{Name: object.GetName(), Namespace: object.GetNamespace()}, &s)
 	if err != nil {

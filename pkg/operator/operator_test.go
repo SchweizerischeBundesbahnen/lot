@@ -2,6 +2,7 @@ package operator_test
 
 import (
 	"context"
+	"sigs.k8s.io/controller-runtime/pkg/metrics/server"
 
 	lotClient "github.com/SchweizerischeBundesbahnen/lot/pkg/lot-client"
 	"github.com/SchweizerischeBundesbahnen/lot/pkg/operator"
@@ -20,7 +21,7 @@ import (
 
 // when spawning multiple operator instances, prevent
 // them from creating listeners that could block each other
-var disableHealthAndMetricEndpoint operator.ConstructorOption = operator.WithManagerOptions(&manager.Options{MetricsBindAddress: "0", HealthProbeBindAddress: "0"})
+var disableHealthAndMetricEndpoint operator.ConstructorOption = operator.WithManagerOptions(&manager.Options{Metrics: server.Options{BindAddress: ":9090"}, HealthProbeBindAddress: "0"})
 
 var _ = Describe("operator", func() {
 	Describe("When creating a new operator", func() {
@@ -33,7 +34,7 @@ var _ = Describe("operator", func() {
 		})
 		It("should return success if given valid objects", func() {
 			By("creating an operator with constructorOptions")
-			opts := manager.Options{MetricsBindAddress: ":9090"}
+			opts := manager.Options{Metrics: server.Options{BindAddress: ":9090"}}
 			o, err := operator.New(&v1.Secret{}, operator.WithManagerOptions(&opts))
 			Expect(err).NotTo(HaveOccurred())
 			Expect(o).NotTo(BeNil())
@@ -44,7 +45,7 @@ var _ = Describe("operator", func() {
 
 			{
 				By("passing WithManagerOptions() twice")
-				opts := manager.Options{MetricsBindAddress: ":9090"}
+				opts := manager.Options{Metrics: server.Options{BindAddress: ":9090"}}
 				o, err = operator.New(&v1.Secret{}, operator.WithManagerOptions(&opts), operator.WithManagerOptions(&opts))
 				Expect(err).To(HaveOccurred())
 				Expect(o).To(BeNil())
